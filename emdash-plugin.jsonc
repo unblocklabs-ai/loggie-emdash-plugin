@@ -1,0 +1,41 @@
+{
+  "$schema": "./node_modules/@emdash-cms/plugin-cli/schemas/emdash-plugin.schema.json",
+  "slug": "loggie",
+  "publisher": "did:plc:aaaaaaaaaaaaaaaaaaaaaaaa",
+  "license": "MIT",
+  "author": {
+    "name": "Unblock Labs",
+    "url": "https://loggie.ai",
+  },
+  "security": {
+    "email": "bill@unblocklabs.ai",
+  },
+  "capabilities": ["network:request"],
+  "allowedHosts": ["app.loggie.ai"],
+  "storage": {},
+  "admin": {
+    "pages": [
+      {
+        "path": "/connections",
+        "label": "Loggie connections",
+        "icon": "link",
+      },
+    ],
+    "settingsSchema": {
+      "apiKey": {
+        "type": "secret",
+        "label": "Loggie API key",
+        "description": "Use a dedicated read-only agent profile. Requires EMDASH_ENCRYPTION_KEY on your EmDash host.",
+      },
+    },
+  },
+  "name": "Loggie",
+  "description": "View authorized connections and GitHub release notes in EmDash through Loggie\u2019s policy-controlled API access.",
+  "keywords": ["loggie", "github", "integrations", "release-notes", "security"],
+  "repo": "https://github.com/unblocklabs-ai/loggie-emdash-plugin",
+  "release": {
+    "requires": {
+      "env:emdash": ">=1.4.0",
+    },
+  },
+}
